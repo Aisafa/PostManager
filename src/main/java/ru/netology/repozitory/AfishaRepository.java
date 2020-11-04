@@ -47,6 +47,6 @@ public class AfishaRepository {
 
     public void removeAll() {
         movies = new MovieInfo[0];
-     }
+    }
 
 }
