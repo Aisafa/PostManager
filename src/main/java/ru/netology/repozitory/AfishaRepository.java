@@ -1,9 +1,7 @@
 package ru.netology.repozitory;
 
 import ru.netology.domain.MovieInfo;
-import ru.netology.manager.PostManager;
 
-import java.util.Arrays;
 
 public class AfishaRepository {
     private MovieInfo[] movies = new MovieInfo[0];

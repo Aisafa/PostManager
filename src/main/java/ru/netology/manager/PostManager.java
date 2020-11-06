@@ -4,30 +4,32 @@ import ru.netology.domain.MovieInfo;
 import ru.netology.repozitory.AfishaRepository;
 
 public class PostManager {
-
-    public PostManager(int countMovies) {
-        this.countMovies = countMovies;
-
-    }
-
+    int countMovies = 10;
     private AfishaRepository repository;
-    int countMovies = 11;
 
-
+    public PostManager(AfishaRepository repository) {
+        this.repository = repository;
+    }
+//    public PostManager(int countMovies){
+//        this.countMovies = countMovies;
+//
+//    }
 
     private MovieInfo[] movies = new MovieInfo[0];
 
     public void addMovie(MovieInfo movie) {
-        int length = movies.length + 1;
-        MovieInfo[] tmp = new MovieInfo[length];
-        for (int i = 0; i < movies.length; i++) {
-            tmp[i] = movies[i];
-        }
-        tmp[length - 1] = movie;
-        movies = tmp;
+        repository.save(movie);
+//        int length = movies.length + 1;
+//        MovieInfo[] tmp = new MovieInfo[length];
+//        for (int i = 0; i < movies.length; i++) {
+//            tmp[i] = movies[i];
+//        }
+//        tmp[length - 1] = movie;
+//        movies = tmp;
     }
 
     public MovieInfo[] getMovies() {
+
         int newSize = countMovies;
         if (newSize > movies.length)
             newSize = movies.length;
