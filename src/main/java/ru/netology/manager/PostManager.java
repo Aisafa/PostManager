@@ -1,7 +1,13 @@
 package ru.netology.manager;
+
 import ru.netology.domain.MovieInfo;
 
 public class PostManager {
+    int countMovies = 1;
+
+    public PostManager(int countMovies) {
+        this.countMovies = countMovies;
+    }
 
     private MovieInfo[] movies = new MovieInfo[0];
 
@@ -15,11 +21,8 @@ public class PostManager {
         movies = tmp;
     }
 
-    public MovieInfo[] getMovie() {
-        int countMovies = 10;
+    public MovieInfo[] getMovies() {
         int newSize = countMovies;
-        if (newSize > movies.length)
-            newSize = movies.length;
         MovieInfo[] result = new MovieInfo[newSize];
         int index = 0;
         for (int i = movies.length - 1; i >= 0 && index < countMovies; i--) {

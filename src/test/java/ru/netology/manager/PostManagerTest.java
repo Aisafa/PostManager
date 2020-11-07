@@ -9,17 +9,17 @@ class PostManagerTest {
 
     @Test
     public void shouldAddedMovie() {
-        PostManager manager = new PostManager();
+        PostManager manager = new PostManager(1);
         MovieInfo Inception = new MovieInfo(1, "Inception", "Triller", 8, 120);
         manager.addMovie(Inception);
-        MovieInfo[] actual = manager.getMovie();
+        MovieInfo[] actual = manager.getMovies();
         MovieInfo[] expected = new MovieInfo[]{Inception};
         assertArrayEquals(expected, actual);
     }
 
     @Test
     public void shouldGetMovie() {
-        PostManager manager = new PostManager();
+        PostManager manager = new PostManager(10);
         MovieInfo first = new MovieInfo(1, "Inception", "Triller", 10.0f, 130);
         MovieInfo second = new MovieInfo(2, "Macbeth", "Triller", 9.1f, 120);
         MovieInfo third = new MovieInfo(3, "The Gudge", "Triller", 8.3f, 132);
@@ -40,13 +40,14 @@ class PostManagerTest {
         manager.addMovie(eight);
         manager.addMovie(ninth);
         manager.addMovie(tenth);
-        MovieInfo[] actual = manager.getMovie();
-        MovieInfo[] expected = new MovieInfo[]{tenth,ninth,eight,seventh,sixth,fifth,fourth,third,second,first};
+        MovieInfo[] actual = manager.getMovies();
+        MovieInfo[] expected = new MovieInfo[]{tenth, ninth, eight, seventh, sixth, fifth, fourth, third, second, first};
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldGetMovieOverTen() {
-        PostManager manager = new PostManager();
+        PostManager manager = new PostManager(10);
         MovieInfo first = new MovieInfo(1, "Inception", "Triller", 10.0f, 130);
         MovieInfo second = new MovieInfo(2, "Macbeth", "Triller", 9.1f, 120);
         MovieInfo third = new MovieInfo(3, "The Gudge", "Triller", 8.3f, 132);
@@ -69,8 +70,8 @@ class PostManagerTest {
         manager.addMovie(ninth);
         manager.addMovie(tenth);
         manager.addMovie(eleventh);
-        MovieInfo[] actual = manager.getMovie();
-        MovieInfo[] expected = new MovieInfo[]{eleventh,tenth,ninth,eight,seventh,sixth,fifth,fourth,third,second};
+        MovieInfo[] actual = manager.getMovies();
+        MovieInfo[] expected = new MovieInfo[]{eleventh, tenth, ninth, eight, seventh, sixth, fifth, fourth, third, second};
         assertArrayEquals(expected, actual);
     }
 }
