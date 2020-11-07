@@ -1,4 +1,4 @@
-package ru.netology.manager.repozitory;
+package ru.netology.repozitory;
 
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.MovieInfo;
