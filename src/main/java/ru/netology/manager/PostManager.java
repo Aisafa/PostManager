@@ -3,10 +3,13 @@ package ru.netology.manager;
 import ru.netology.domain.MovieInfo;
 
 public class PostManager {
-    int countMovies = 1;
+    int countMovies = 10;
 
     public PostManager(int countMovies) {
         this.countMovies = countMovies;
+    }
+
+    public PostManager() {
     }
 
     private MovieInfo[] movies = new MovieInfo[0];
