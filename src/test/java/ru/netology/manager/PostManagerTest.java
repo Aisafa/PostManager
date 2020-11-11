@@ -19,7 +19,7 @@ class PostManagerTest {
 
     @Test
     public void shouldGetMovieSmallerTen() {
-        PostManager manager = new PostManager(8);
+        PostManager manager = new PostManager(10);
         MovieInfo first = new MovieInfo(1, "Inception", "Triller", 10.0f, 130);
         MovieInfo second = new MovieInfo(2, "Macbeth", "Triller", 9.1f, 120);
         MovieInfo third = new MovieInfo(3, "The Gudge", "Triller", 8.3f, 132);

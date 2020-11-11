@@ -26,6 +26,8 @@ public class PostManager {
 
     public MovieInfo[] getMovies() {
         int newSize = countMovies;
+        if (newSize >= movies.length)
+            newSize = movies.length;
         MovieInfo[] result = new MovieInfo[newSize];
         int index = 0;
         for (int i = movies.length - 1; i >= 0 && index < countMovies; i--) {
